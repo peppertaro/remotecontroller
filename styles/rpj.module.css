@@ -1,0 +1,9 @@
+.container{
+    background-color:darkslategrey;
+    text-align: center;
+    height:100vh;
+}
+.powerbtn{
+    color:#fff;
+    background-color:deeppink;
+}

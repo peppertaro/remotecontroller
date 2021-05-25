@@ -1,0 +1,48 @@
+  .container{
+    background-color:rgba(255,255,255,0.6);
+    text-align: center;
+    height:100%;
+  }
+  .powerbtn{
+    color: #fff;
+    background-color:lightcoral;
+  }
+  .brbtn{
+    color:#fff;
+    background-color: lightskyblue;
+  }
+
+  .ch{
+    width: 30rem;
+    margin: 4rem auto;
+  }
+  .chbtn{
+    width: 6rem;
+    height: 6rem;
+    border-radius: 50%;
+    background-color: rgba(255,255,255,0.9);
+    border: solid .1rem #a9a9a9;
+    font-size: 4rem;
+    margin: .5rem 1.5rem;
+    font-family:Castellar,"Book Antiqua","Adobe Devanagari",Candara,Verdana;
+  }
+  .chbtn:hover{
+    border:solid .1rem lightgray;
+  }
+  .chbtn:active{
+    border:none;
+  }
+
+
+  /*----Arrows-----*/
+
+  .volarr,.charr{
+    display:inline-block;
+  }
+
+  .volup,.voldown,.chup,.chdown{
+    display:block;
+    font-size:4rem;
+  }
+  
+
