@@ -38,11 +38,35 @@
 
   .volarr,.charr{
     display:inline-block;
+    margin: 1rem;
   }
 
   .volup,.voldown,.chup,.chdown{
     display:block;
-    font-size:4rem;
+    font-size:5rem;
+    color:rgba(0,0,0,0.8);
   }
   
+  .volup:hover,
+  .voldown:hover,
+  .chup:hover,
+  .chdown:hover{
+    color:rgba(0,0,0,0.6);
+  }
 
+  .volup:active,
+  .voldown:active,
+  .chup:active,
+  .chdown:active{
+    color:rgba(0,0,0,1);
+  }
+
+
+  @media (max-width: 600px) {
+    .volup:hover,
+    .voldown:hover,
+    .chup:hover,
+    .chdown:hover{
+      color:initial;
+    }
+  }

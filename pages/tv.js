@@ -12,36 +12,33 @@ const TV=()=> {
       </div>
       <div className={styles.arrows}>
         <div className={styles.volarr}>
-          <button className={styles.volup}><i className="fas fa-volume-up"></i></button>
-          <button className={styles.voldown}><i className="fas fa-volume-down"></i></button>
+          <i className={`fas fa-volume-up ${styles.volup}`} />
+          <i className={`fas fa-volume-down ${styles.voldown}`} />
         </div>
         <div className={styles.charr}>
-          <button className={styles.chup}><i className="fas fa-chevron-circle-up"></i></button>
-          <button className={styles.chdown}><i className="fas fa-chevron-circle-down"></i></button>
+          <i className={`fas fa-chevron-circle-up ${styles.chup}`} />
+          <i className={`fas fa-chevron-circle-down ${styles.chdown}`} />
         </div>
       </div>
       <div className={layouts.power}>
-        <button className={`${styles.brbtn} ${layouts.btn} ${layouts.icons}`}><i className="fas fa-power-off"></i></button>
+        <button className={`${styles.brbtn} ${layouts.btn} ${layouts.icons}`}><i className="fas fa-power-off" /></button>
       </div>
     </Layout>
   )
 }
 export default TV;
-/*
+
 
 export async function getStaticProps(context) {
-  const req=require('child_process');
-  const res=req.execFile("ls",(err,stdout,stderr)=>{
-    if(err){
-      console.err(err);
-    }
-    console.log(stdout);
-    console.log(stderr)
-  })
-
+  const child=require('child_process');
+    const list=child.execFile("ls",["-al","/ir/"],(err,stdout,stderr)=>{
+      if(err){
+        console.err(err);
+      }
+      console.log("stdout:"+stdout);
+      console.log("stderr:"+stderr)
+    })
   return {
-    props: {res}
+    props: {test:"hoge"}
   }
 }
-
-*/
