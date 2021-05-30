@@ -7,11 +7,7 @@
     color: #fff;
     background-color:lightcoral;
   }
-  .brbtn{
-    color:#fff;
-    background-color: lightskyblue;
-  }
-
+ 
   .ch{
     width: 30rem;
     margin: 4rem auto;
@@ -34,7 +30,61 @@
   }
 
 
+  /*-----Selects-----*/
+  .selects{
+    display:inline-block;
+  }
+  .selectbtn,.brbtn{
+    width: 6rem;
+    height: 6rem;
+    font-family: Castellar,"Book Antiqua","Adobe Devanagari",Candara,Verdana;
+  }
+
+  .open{
+    transform:translateY(-1rem);
+  }
   /*----Arrows-----*/
+
+  .arrows{
+    margin: 2rem auto;
+    width: 21rem;
+    height: 18rem;
+  }
+  .arrow{
+    display:inline-block;
+    color:rgba(0,0,0,0.8);
+  }
+  .arrow:hover{
+    color:rgba(0,0,0,0.6);
+    transition:.5s;
+  }
+  .arrow:active{
+    color:#000;
+  }
+  .btn{
+    z-index:100;
+  }
+
+  .entbtn{
+    font-size: 8.5rem;
+    z-index:0;
+  }
+
+  .up,.down{
+      width:80%;
+  }
+  .up{
+      transform:translateY(50%)
+  }
+  .down{
+      transform:translateY(-50%)
+  }
+  .left{
+      transform: translate(60%,-40%);
+  }
+  .right{
+      transform: translate(-60%,-40%);
+  }
 
   .volarr,.charr{
     display:inline-block;
@@ -61,6 +111,22 @@
     color:rgba(0,0,0,1);
   }
 
+/*------BluRay-----*/
+.brBox{
+  margin-bottom:10rem;
+}
+
+.brpower{
+  width:100%;
+}
+
+.brbtn{  
+  color:#fff;
+  background-color: lightskyblue;
+}
+.brselect{
+  display:inline-block;
+}
 
   @media (max-width: 600px) {
     .volup:hover,

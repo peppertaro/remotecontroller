@@ -1,9 +1,63 @@
 .container{
-    background-color:darkslategrey;
-    text-align: center;
-    height:100vh;
+  background-color:darkslategrey;
+  text-align: center;
+  height:100vh;
 }
 .powerbtn{
-    color:#fff;
-    background-color:deeppink;
+  color:#fff;
+  background-color:deeppink;
 }
+.control{
+  display:inline-block;
+}
+
+.src{
+  width: 6rem;
+  height: 6rem;
+  border-radius: 50%;
+  background-color: rgba(255,255,255,0.6);
+  border: solid .1rem #a9a9a9;
+  font-size: 2rem;
+  margin: .5rem 1.5rem;
+  font-family:Castellar,"Book Antiqua","Adobe Devanagari",Candara,Verdana;
+}
+
+.src:hover{
+  border:solid .1rem lightgray;
+}
+.src:active{
+  border:none;
+}
+.volarr{
+  padding:2rem;
+}
+
+.volup,.voldown,.chup,.chdown{
+  display:block;
+  font-size:4rem;
+  color:rgba(0,0,0,0.8);
+}
+
+.volup:hover,
+  .voldown:hover,
+  .chup:hover,
+  .chdown:hover{
+    color:rgba(0,0,0,0.6);
+  }
+
+  .volup:active,
+  .voldown:active,
+  .chup:active,
+  .chdown:active{
+    color:rgba(0,0,0,1);
+  }
+
+
+@media (max-width: 600px) {
+    .volup:hover,
+    .voldown:hover,
+    .chup:hover,
+    .chdown:hover{
+      color:initial;
+    }
+  }

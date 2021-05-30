@@ -1,11 +1,20 @@
 import styles from '../styles/rpj.module.css';
 import Layout from '../layouts/layout';
+import Req from '../modules/request';
 
 const RPJ=()=> {
   return (
     <Layout container={styles.container}
-    powerbtn={styles.powerbtn}>
-      hoge
+    powerbtn={styles.powerbtn}
+    name="RPJ"
+    val="RPJ_pw">
+      <div className={styles.control}> 
+        <button className={styles.src} onClick={()=>Req("RPJ_src")}>SRC</button>
+        <div className={styles.volarr}>
+          <i className={`fas fa-volume-up ${styles.volup}`} onClick={()=>Req("RPJ_volup")} />
+          <i className={`fas fa-volume-down ${styles.voldown}`} onClick={()=>Req("RPJ_voldown")} />
+        </div>
+      </div>
     </Layout> 
   )
 }
