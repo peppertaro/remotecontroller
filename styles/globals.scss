@@ -46,6 +46,8 @@ table {
 }
 
 button{
+  -webkit-appearance: none;
+  -webkit-text-size-adjust: 100%;
   background-color:transparent;
   border:none;
 }
@@ -89,8 +91,10 @@ html {
 }
 
 i {
+  -webkit-appearance: none;
+  -webkit-text-size-adjust: 100%;
   padding:.8rem;
-  font-size: 3rem;  
+  font-size: 3rem;
 }
 
 

@@ -21,6 +21,7 @@
     font-size: 4rem;
     margin: .5rem 1.5rem;
     font-family:Castellar,"Book Antiqua","Adobe Devanagari",Candara,Verdana;
+    align-items: center;
   }
   .chbtn:hover{
     border:solid .1rem lightgray;
@@ -37,6 +38,7 @@
   .selectbtn,.brbtn{
     width: 6rem;
     height: 6rem;
+    vertical-align: top;
     font-family: Castellar,"Book Antiqua","Adobe Devanagari",Candara,Verdana;
   }
 
@@ -50,17 +52,7 @@
     width: 21rem;
     height: 18rem;
   }
-  .arrow{
-    display:inline-block;
-    color:rgba(0,0,0,0.8);
-  }
-  .arrow:hover{
-    color:rgba(0,0,0,0.6);
-    transition:.5s;
-  }
-  .arrow:active{
-    color:#000;
-  }
+  
   .btn{
     z-index:100;
   }
@@ -68,22 +60,6 @@
   .entbtn{
     font-size: 8.5rem;
     z-index:0;
-  }
-
-  .up,.down{
-      width:80%;
-  }
-  .up{
-      transform:translateY(50%)
-  }
-  .down{
-      transform:translateY(-50%)
-  }
-  .left{
-      transform: translate(60%,-40%);
-  }
-  .right{
-      transform: translate(-60%,-40%);
   }
 
   .volarr,.charr{

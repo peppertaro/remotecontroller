@@ -28,6 +28,40 @@
     border:none;
 }
 
+/*------Arrows------*/
+
+.arrows{
+    margin: 2rem auto;
+    width: 16rem;
+    height: 16rem;
+}   
+
+.up,.down{
+    width: 16.5rem;
+}
+.left,.right{
+    vertical-align: top;
+    height: 5.5rem;
+}
+.enter{
+    margin: -2.5rem;
+}
+.down{
+    margin-top: -.5rem;
+}
+
+.arrow{
+    display:inline-block;
+    color:rgba(0,0,0,0.8);
+}
+.arrow:hover{
+    color:rgba(0,0,0,0.6);
+    transition:.5s;
+}
+.arrow:active{
+    color:#000;
+}
+
 /*------Footer------*/
 .footer{
     position:fixed;

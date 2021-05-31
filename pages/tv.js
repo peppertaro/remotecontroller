@@ -6,10 +6,11 @@ import Req from '../modules/request';
 import {useState} from 'react';
 
 const TV=() => {
-  const [ChsState, setChsState]=useState(false),
-    ChsToggle=()=>{
-        setChsState(!ChsState);
-    }
+  const [ChsState, setChsState]=useState(false);
+  const ChsToggle=()=>{
+    setChsState(!ChsState);
+  };
+  
   return (
     <Layout container={`${layouts.container} ${styles.container}`}
             powerbtn={styles.powerbtn}
@@ -19,28 +20,28 @@ const TV=() => {
         <button className={`${styles.selectbtn} ${layouts.btn} ${layouts.icons}`} onClick={()=>Req("TV_select")} >Select</button>
         <button className={`${styles.selectbtn} ${layouts.btn} ${layouts.icons}`} onClick={()=>Req("TV_chlist")}>Ch-List</button>
         <button className={`${styles.selectbtn} ${layouts.btn} ${layouts.icons}`} onClick={()=>Req("TV_back")}>Back</button>
-        <button className={`${styles.selectbtn} ${layouts.btn} ${layouts.icons}`} onClick={ChsToggle} >Chs <br/> <i className={`fas fa-caret-${ChsState?"up":"down"} ${styles.open}`}></i></button>
+        <button className={`${styles.selectbtn} ${layouts.btn} ${layouts.icons}`} onClick={ChsToggle} >Chs<i className={`fas fa-caret-${ChsState?"up":"down"} ${styles.open}`}></i></button>
       </div>
       
       <div className={styles.ch} style={{display:ChsState?"":"none"}} >
-        <Chs btn={styles.chbtn} />
+        <Chs btn={`${styles.chbtn}  ${layouts.btn}`} />
       </div>
       <div className={styles.arrowBox}>
         <div className={styles.arrows}>
-          <button className={styles.up} >
-            <i className={`fas fa-chevron-up ${styles.arrow} ${styles.btn}`} onClick={()=>Req("TV_up")} ></i>
+          <button className={layouts.up} >
+            <i className={`fas fa-chevron-up ${layouts.arrow} ${styles.btn}`} onClick={()=>Req("TV_up")} ></i>
           </button>
-          <button className={styles.left} >
-            <i className={`fas fa-chevron-left ${styles.arrow} ${styles.btn}`} onClick={()=>Req("TV_left")} ></i>
+          <button className={layouts.left} >
+            <i className={`fas fa-chevron-left ${layouts.arrow} ${styles.btn}`} onClick={()=>Req("TV_left")} ></i>
           </button>
-          <button className={styles.enter} >
-            <i className={`fas fa-dot-circle ${styles.arrow} ${styles.entbtn}`} onClick={()=>Req("TV_enter")} ></i>
+          <button className={layouts.enter} >
+            <i className={`fas fa-dot-circle ${layouts.arrow} ${styles.entbtn}`} onClick={()=>Req("TV_enter")} ></i>
           </button>
-          <button className={styles.right} >
-            <i className={`fas fa-chevron-right ${styles.arrow} ${styles.btn}`} onClick={()=>Req("TV_right")} ></i>
+          <button className={layouts.right} >
+            <i className={`fas fa-chevron-right ${layouts.arrow} ${styles.btn}`} onClick={()=>Req("TV_right")} ></i>
           </button>
-          <button className={styles.down} >
-            <i className={`fas fa-chevron-down ${styles.arrow} ${styles.btn}`} onClick={()=>Req("TV_down")} ></i>
+          <button className={layouts.down} >
+            <i className={`fas fa-chevron-down ${layouts.arrow} ${styles.btn}`} onClick={()=>Req("TV_down")} ></i>
           </button>
         </div>
         <div className={styles.volarr}>
