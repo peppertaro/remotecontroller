@@ -41,17 +41,28 @@
 }
 .left,.right{
     vertical-align: top;
-    height: 5.5rem;
+    height: 8.5rem;
+    margin-top: -1.5rem;
 }
 .enter{
-    margin: -2.5rem;
+    margin: -2.5rem -3rem;
 }
 .down{
-    margin-top: -.5rem;
+    margin-top: -1.5rem; 
+}
+
+.arrbtn{
+    z-index:100;
+}
+
+.entbtn{
+    font-size: 8.5rem;
+    z-index:0;
 }
 
 .arrow{
     display:inline-block;
+    position:relative;
     color:rgba(0,0,0,0.8);
 }
 .arrow:hover{

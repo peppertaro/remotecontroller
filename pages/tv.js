@@ -1,6 +1,7 @@
 import styles from '../styles/tv.module.css';
 import layouts from '../styles/Layouts/layouts.module.css';
 import Chs from '../modules/Chs';
+import Arrows from '../modules/Arrows';
 import Layout from '../layouts/layout';
 import Req from '../modules/request';
 import {useState} from 'react';
@@ -27,23 +28,7 @@ const TV=() => {
         <Chs btn={`${styles.chbtn}  ${layouts.btn}`} />
       </div>
       <div className={styles.arrowBox}>
-        <div className={styles.arrows}>
-          <button className={layouts.up} >
-            <i className={`fas fa-chevron-up ${layouts.arrow} ${styles.btn}`} onClick={()=>Req("TV_up")} ></i>
-          </button>
-          <button className={layouts.left} >
-            <i className={`fas fa-chevron-left ${layouts.arrow} ${styles.btn}`} onClick={()=>Req("TV_left")} ></i>
-          </button>
-          <button className={layouts.enter} >
-            <i className={`fas fa-dot-circle ${layouts.arrow} ${styles.entbtn}`} onClick={()=>Req("TV_enter")} ></i>
-          </button>
-          <button className={layouts.right} >
-            <i className={`fas fa-chevron-right ${layouts.arrow} ${styles.btn}`} onClick={()=>Req("TV_right")} ></i>
-          </button>
-          <button className={layouts.down} >
-            <i className={`fas fa-chevron-down ${layouts.arrow} ${styles.btn}`} onClick={()=>Req("TV_down")} ></i>
-          </button>
-        </div>
+        <Arrows val={"TV"} />
         <div className={styles.volarr}>
           <i className={`fas fa-volume-up ${styles.volup}`} onClick={()=>Req("TV_volup")} />
           <i className={`fas fa-volume-down ${styles.voldown}`} onClick={()=>Req("TV_voldown")} />

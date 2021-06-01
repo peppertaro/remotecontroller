@@ -11,14 +11,6 @@
     background-color:rgba(0,0,0,0.4);
 }
 
-.btn{
-    z-index:100;
-}
-
-.entbtn{
-    font-size: 8.5rem;
-    z-index:0;
-}
 
 /*-------Search--------*/
 .searchbox{
@@ -28,8 +20,9 @@
 }
 .searchbtn{
     background-color:rgba(0,0,0,0.4);
+    border-radius: .3rem;
     color:#aaa;
-    padding:.8rem;
+    padding:.7rem;
     margin:.3rem;
     border:solid .1rem rgba(255,255,255,0.2);
 }
