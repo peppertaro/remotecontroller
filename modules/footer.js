@@ -25,15 +25,6 @@ const Footer=()=> {
             faw:"fas fa-video"
         },
     ]
-    
-/*
-    const [ScrollState, setScrollState]=useState(false);
-    const ShowFooter=()=>{
-        if(window.pageYOffset===0||window.pageYOffset===0){
-            setScrollState(!ScrollState);
-        }
-    };
-*/
     const Location =()=> {
         !window
         ?  location.pathname

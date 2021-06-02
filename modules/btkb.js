@@ -1,11 +1,10 @@
-const Req=(v)=>{
+const BT=(v)=>{
     const request = new XMLHttpRequest(),
-     url="/api/ir?scr="+v;
+     url="/api/ir?kb="+v;
     request.open('GET', url, true);
     request.onload = ()=>{
-        console.log("ir request :"+v+" sent to rthome.")
+        console.log("bt input :"+v+" sent to rthome.")
     }
     request.send();
 }
-
-export default Req;
+export default BT;

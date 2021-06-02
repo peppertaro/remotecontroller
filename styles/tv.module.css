@@ -34,6 +34,7 @@
   /*-----Selects-----*/
   .selects{
     display:inline-block;
+    padding: 2rem 0;
   }
   .selectbtn,.brbtn{
     width: 6rem;
