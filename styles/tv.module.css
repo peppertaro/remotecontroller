@@ -75,14 +75,14 @@
   .volup,.voldown,.chup,.chdown{
     display:block;
     font-size:4.5rem;
-    color:rgba(0,0,0,0.8);
+    color:rgba(0,0,0,0.6);
   }
   
   .volup:hover,
   .voldown:hover,
   .chup:hover,
   .chdown:hover{
-    color:rgba(0,0,0,0.6);
+    color:rgba(0,0,0,0.3);
   }
 
   .volup:active,

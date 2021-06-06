@@ -1,7 +1,7 @@
 .container{
     background-color:#36383C;
     text-align: center;
-    height:100vh;
+    height:calc(100vh + 5rem);
 }
 
 .powerbtn{
@@ -17,19 +17,22 @@
     background-color: rgba(255,255,255,0.6);
     border-radius: .3rem;
     padding:.5rem;
+    ime-mode:disabled;
 }
 .searchbtn{
     background-color:rgba(0,0,0,0.4);
-    border-radius: .3rem;
+    width: 5rem;
+    height: 5rem;
     color:#aaa;
     padding:.7rem;
     margin:.3rem;
     border:solid .1rem rgba(255,255,255,0.2);
 }
 
-.searchbtn:active{
-    border:none;
+.inputbtn{
+    margin:1.5rem;
 }
+
 
 @media (max-width: 600px) {
     .arrow:hover{

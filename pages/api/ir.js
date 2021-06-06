@@ -8,7 +8,6 @@ export default (req, res) => {
      val=req.query.kb;
      cmd="/src/btkb/keyboard/send_string.py";
   }
-
      console.log("command : "+val);
     child.execFile(cmd,[val],(err,stdout,stderr)=>{
       if(err){

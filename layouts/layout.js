@@ -8,7 +8,7 @@ const Layout=(props)=>{
             <div className={props.container} >
                 <Header powerbtn={props.powerbtn} val={props.val} />
                     {props.children}
-                <Footer />
+                <Footer focus={props.focus} />
             </div>
         </div>
     );
