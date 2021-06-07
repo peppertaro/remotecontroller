@@ -18,9 +18,6 @@ const Ama=()=> {
       case " ":
        val="👽";
         break;
-      case "!":
-        val="！"
-        break;
       default:
         break; 
     }

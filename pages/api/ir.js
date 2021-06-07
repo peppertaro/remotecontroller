@@ -2,11 +2,11 @@ export default (req, res) => {
   const child=require('child_process');
   let val,cmd='';
   if(req.query.scr){
-     val=req.query.scr;
-     cmd="/ir/run.sh";
+    val=req.query.scr;
+    cmd="/ir/run.sh";
   }else if(req.query.kb){
-     val=req.query.kb;
-     cmd="/src/btkb/keyboard/send_string.py";
+    val=req.query.kb;
+    cmd="/src/btkb/keyboard/send_string.py";
   }
      console.log("command : "+val);
     child.execFile(cmd,[val],(err,stdout,stderr)=>{
