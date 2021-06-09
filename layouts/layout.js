@@ -1,7 +1,6 @@
     import Header from "../modules/header";
     import Footer from "../modules/footer";
-
-
+        
 const Layout=(props)=>{
     return(
         <div name={props.name} >

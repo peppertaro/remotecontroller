@@ -52,22 +52,22 @@
 }
 
 .arrbtn{
+    position:relative;
     z-index:100;
 }
 
 .entbtn{
+    position:relative;
     font-size: 8.5rem;
     z-index:0;
 }
 
 .arrow{
-    display:inline-block;
-    position:relative;
     color:rgba(0,0,0,0.6);
 }
 .arrow:hover{
     color:rgba(0,0,0,0.3);
-    transition:.5s;
+    transition:.2s;
 }
 .arrow:active{
     color:#000;

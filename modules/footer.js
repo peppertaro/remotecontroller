@@ -30,14 +30,13 @@ const Footer=(props)=> {
         :  window.location.pathname;
         return e;
     }
-    
     return (
         <footer className={styles.footer} style={{display:props.focus?"none":""}} >
             {Lists.map((list,k)=>{
                 return(
                     <Link href={list.href} className={styles.icons} key={k} >
-                        <button className={`${styles.icons} ${styles.btn}`} disabled={Location==list.href} >
-                            <i className={list.faw}></i>
+                        <button className={`${styles.icons} ${styles.btn}`}  >
+                            <i className={list.faw} disabled={Location==list.href} ></i>
                         </button>
                     </Link>
                 )}

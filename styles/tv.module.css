@@ -10,7 +10,7 @@
  
   .ch{
     width: 30rem;
-    margin: 5.5rem auto;
+    margin: 1rem auto;
   }
   .chbtn{
     width: 6rem;
@@ -34,7 +34,7 @@
   /*-----Selects-----*/
   .selects{
     display:inline-block;
-    padding: 2rem 0;
+    padding: .5rem 0;
   }
   .selectbtn,.brbtn{
     width: 6rem;
@@ -94,7 +94,7 @@
 
 /*------BluRay-----*/
 .brBox{
-  margin-bottom:10rem;
+  height: 30rem;
 }
 
 .brpower{

@@ -1,4 +1,4 @@
-const BT=(v)=>{
+const KB=(v)=>{
     const request = new XMLHttpRequest(),
      url="/api/ir?kb="+v;
     request.open('GET', url, true);
@@ -7,4 +7,4 @@ const BT=(v)=>{
     }
     request.send();
 }
-export default BT;
+export default KB;

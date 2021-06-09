@@ -1,14 +1,16 @@
 import styles from '../styles/ama.module.css';
 import Layout from '../layouts/layout';
 import layouts from '../styles/Layouts/layouts.module.css';
+import Arrows from '../modules/Arrows';
 import KB from "../modules/btkb";
 import Req from '../modules/request';
 import {useState} from 'react';
 
 
 const Ama=()=> {
-  const [text] = useState('');
-  const [isFocused, setFocused]=useState(false);
+  const [text] = useState(''),
+   [isFocused, setFocused]=useState(false),
+   [ArrState, setArrState]=useState(false);
   const sendKey=(e)=>{
     if(e.target.value.match(/^[^\x01-\x7E\xA1-\xDF]+$/)){
       return alert('直接日本語入力することはできません！\n英字で入力してください！');
@@ -22,39 +24,46 @@ const Ama=()=> {
         break; 
     }
     KB(val);
-  };  
+  };
+  const ArrToggle=()=>{
+    setArrState(!ArrState);
+  }
   return (
     <Layout container={styles.container} 
             powerbtn={styles.powerbtn}
             name="FIRE"
             val="FIRE_pw"
-            focus={isFocused} >
-      <button className={`${styles.searchbtn} ${layouts.btn}`} onClick={()=>Req("TV_back")}>Back</button>
-      <div className={layouts.arrows}>
-        <button className={layouts.up} >
-          <i className={`fas fa-chevron-up ${layouts.arrow} ${layouts.arrbtn}`} onClick={()=>KB("↑")} ></i>
-        </button>
-        <button className={layouts.left} >
-          <i className={`fas fa-chevron-left ${layouts.arrow} ${layouts.arrbtn}`} onClick={()=>KB("←")} ></i>
-        </button>
-        <button className={layouts.enter} >
-          <i className={`fas fa-dot-circle ${layouts.arrow} ${layouts.entbtn}`} onClick={()=>KB("〆")} ></i>
-        </button>
-        <button className={layouts.right} >
-          <i className={`fas fa-chevron-right ${layouts.arrow} ${layouts.arrbtn}`} onClick={()=>KB("→")} ></i>
-        </button>
-        <button className={layouts.down} >
-          <i className={`fas fa-chevron-down ${layouts.arrow} ${layouts.arrbtn}`} onClick={()=>KB("↓")} ></i>
-        </button>
-      </div>      
-      <div className={styles.search}>
-        <input id={styles.searchbox} type="email" onChange={sendKey} value={text} onFocus={()=>setFocused(true)} onBlur={()=>setFocused(false)} placeholder="Check screen for your input" autoComplete="off" />
-        <div className={styles.inputbtn}>
-          <button className={`${styles.searchbtn} ${layouts.btn}`} onClick={()=>KB('〆')}>Enter</button>
-          <button className={`${styles.searchbtn} ${layouts.btn}`} onClick={()=>KB('✂')}>Del</button>
-          <button className={`${styles.searchbtn} ${layouts.btn}`} onClick={()=>KB('椨')}>Tab</button>
+            focus={isFocused}
+            >
+      <button className={`${styles.amabtn} ${layouts.btn}`} onClick={()=>Req("TV_back")}>Back</button>
+      <button className={`${ArrState?styles.TVbtn:styles.amabtn} ${layouts.btn}`} onClick={ArrToggle}>{ArrState?"TV":"AMA"}</button>
+      
+      {ArrState
+      ?<Arrows up={()=>Req('TV_up')}
+              left={()=>Req('TV_left')}
+              enter={()=>Req('TV_enter')}
+              right={()=>Req('TV_right')}
+              down={()=>Req('TV_down')} 
+              arrow={styles.TVcl}
+      />
+      :<><Arrows up={()=>KB('↑')}
+              left={()=>KB('←')}
+              enter={()=>KB('〆')}
+              right={()=>KB('→')}
+              down={()=>KB('↓')} 
+              arrow={styles.Amacl}             
+              />
+        <div className={styles.search} >
+          <input id={styles.searchbox} type="email" onChange={sendKey} value={text} onFocus={()=>setFocused(true)} onBlur={()=>setFocused(false)} placeholder="Check screen for your input" autoComplete="off" />
+          <div className={styles.inputbtn}>
+            <button className={`${styles.amabtn} ${layouts.btn}`} onClick={()=>KB('〆')}>Enter</button>
+            <button className={`${styles.amabtn} ${layouts.btn}`} onClick={()=>KB('✂')}>Del</button>
+            <button className={`${styles.amabtn} ${layouts.btn}`} onClick={()=>KB('椨')}>Tab</button>
+          </div>
         </div>
-      </div>
+      </>
+      }
+      
     </Layout>
   )
 }
