@@ -24,23 +24,25 @@ const Footer=(props)=> {
             faw:"fas fa-video"
         },
     ]
-    const Location =()=> {
-        const e=!window
-        ?  location.pathname
-        :  window.location.pathname;
-        return e;
-    }
     return (
         <footer className={styles.footer} style={{display:props.focus?"none":""}} >
             {Lists.map((list,k)=>{
-                return(
-                    <Link href={list.href} className={styles.icons} key={k} >
-                        <button className={`${styles.icons} ${styles.btn}`}  >
-                            <i className={list.faw} disabled={Location==list.href} ></i>
+                if(props.loc==list.href){
+                    return (
+                        <button className={`${styles.icons} ${styles.btn}`} disabled  key={k} >
+                            <i className={list.faw} ></i>
                         </button>
-                    </Link>
-                )}
-            )}
+                    )
+                }else{
+                   return( 
+                        <Link href={list.href} key={k} >
+                            <button className={`${styles.icons} ${styles.btn}`} >
+                                <i className={list.faw} ></i>
+                            </button>
+                        </Link> 
+                    )
+                }
+            })}
         </footer>
     )
 }

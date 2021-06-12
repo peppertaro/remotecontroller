@@ -9,19 +9,19 @@ import {useState} from 'react';
 const TV=() => {
   const [ChsState, setChsState]=useState(false);
   const ChsToggle=()=>setChsState(!ChsState);  
+ 
   return (
     <Layout container={`${layouts.container} ${styles.container}`}
             powerbtn={styles.powerbtn}
             name="TV"
             val="TV_toggle"
-            loc={Location}>
+            loc="/tv" >
       <div className={styles.selects}>
         <button className={`${styles.selectbtn} ${layouts.btn} ${layouts.icons}`} onClick={()=>Req("TV_select")} >Select</button>
         <button className={`${styles.selectbtn} ${layouts.btn} ${layouts.icons}`} onClick={()=>Req("TV_chlist")}>Ch-List</button>
         <button className={`${styles.selectbtn} ${layouts.btn} ${layouts.icons}`} onClick={()=>Req("TV_back")}>Back</button>
         <button className={`${styles.selectbtn} ${layouts.btn} ${layouts.icons}`} onClick={ChsToggle} >Chs<i className={`fas fa-caret-${ChsState?"up":"down"} ${styles.open}`}></i></button>
       </div>
-      
       <div className={styles.ch} >
         {ChsState?<Chs btn={`${styles.chbtn} ${layouts.btn}`} />:""}        
       </div>

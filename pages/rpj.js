@@ -8,7 +8,8 @@ const RPJ=()=> {
     <Layout container={styles.container}
     powerbtn={styles.powerbtn}
     name="RPJ"
-    val="RPJ_pw">
+    val="RPJ_pw"
+    loc="/rpj">
       <div className={styles.control}> 
         <button className={`${styles.src} ${layouts.btn}`} onClick={()=>Req("RPJ_src")}>SRC</button>
         <div className={styles.volarr}>
