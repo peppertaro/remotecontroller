@@ -29,7 +29,7 @@ const Footer=(props)=> {
             {Lists.map((list,k)=>{
                 if(props.loc==list.href){
                     return (
-                        <button className={`${styles.icons} ${styles.btn}`} disabled  key={k} >
+                        <button className={styles.disbtn} disabled  key={k} >
                             <i className={list.faw} ></i>
                         </button>
                     )

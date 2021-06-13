@@ -20,6 +20,14 @@
     padding:.5rem;
     margin:1rem; 
 }
+.disbtn{
+    border-radius: 50%;
+    border:solid .1rem  lightgrey;
+    padding:.5rem;
+    margin:1rem;
+    width: 6.5rem;
+    background-color: rgba(255,255,255,0.2);
+}
 
 .btn:hover{
     border:solid .1rem darkgray;
@@ -97,8 +105,9 @@
         width:16vw;
         background-color: transparent;
     }
-    .footer .icons{
-        border:none; 
+    .disbtn{
+        border:none;
+        background-color: transparent;
     }
 
 }

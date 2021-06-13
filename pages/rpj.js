@@ -7,7 +7,7 @@ const RPJ=()=> {
   return (
     <Layout container={styles.container}
     powerbtn={styles.powerbtn}
-    name="RPJ"
+    name="Projector"
     val="RPJ_pw"
     loc="/rpj">
       <div className={styles.control}> 

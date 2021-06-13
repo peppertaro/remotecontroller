@@ -25,20 +25,17 @@ const Ama=()=> {
     }
     KB(val);
   };
-  const ArrToggle=()=>{
-    setArrState(!ArrState);
-  }
 
   return (
     <Layout container={styles.container} 
             powerbtn={styles.powerbtn}
-            name="FIRE"
+            name="FireTVstick"
             val="FIRE_pw"
             focus={isFocused}
             loc="/ama"
             >
       <button className={`${styles.amabtn} ${layouts.btn}`} onClick={()=>Req("TV_back")}>Back</button>
-      <button className={`${ArrState?styles.TVbtn:styles.amabtn} ${layouts.btn}`} onClick={ArrToggle}>{ArrState?"TV":"AMA"}</button>
+      <button className={`${ArrState?styles.TVbtn:styles.amabtn} ${layouts.btn}`} onClick={()=>setArrState(!ArrState)}>{ArrState?"TV":"AMA"}</button>
       {ArrState
       ?<Arrows up={()=>Req('TV_up')}
               left={()=>Req('TV_left')}
