@@ -51,14 +51,16 @@ const TV=() => {
           <button className={`${styles.brbtn} ${layouts.btn} ${layouts.icons}`} onClick={()=>Req("BR_list")} >List</button>
           <button className={`${styles.brbtn} ${layouts.btn} ${layouts.icons}`} onClick={()=>setCtrlState(!CtrlState)} >Ctrl<i className={`fas fa-caret-${CtrlState?"up":"down"} ${styles.open}`}></i></button>
           {CtrlState &&
-            <div className={styles.brplay}>
+            <div className={styles.brplay}>              
+              <button className={`${styles.brbtn} ${layouts.btn} ${layouts.icons}`} onClick={()=>Req("BR_skipb")} > <i className="fas fa-fast-backward"></i> </button>
+              <button className={`${styles.brbtn} ${layouts.btn} ${layouts.icons}`} onClick={()=>Req("BR_lang")} ><i className="fas fa-pause"></i></button>            
+              <button className={`${styles.brbtn} ${layouts.btn} ${layouts.icons}`} onClick={()=>Req("BR_skipf")} ><i className="fas fa-fast-forward"></i></button>
+              <br/>
               <button className={`${styles.brbtn} ${layouts.btn} ${layouts.icons}`} onClick={()=>Req("BR_rew")} ><i className="fas fa-backward"></i></button>
               <button className={`${styles.brbtn} ${layouts.btn} ${layouts.icons}`} onClick={()=>Req("BR_play")} ><i className="fas fa-play"></i></button>
               <button className={`${styles.brbtn} ${layouts.btn} ${layouts.icons}`} onClick={()=>Req("BR_ff")} ><i className="fas fa-forward"></i></button>
               <br/>
-              <button className={`${styles.brbtn} ${layouts.btn} ${layouts.icons}`} onClick={()=>Req("BR_skipb")} > <i className="fas fa-fast-backward"></i> </button>
-              <button className={`${styles.brbtn} ${layouts.btn} ${layouts.icons}`} onClick={()=>Req("BR_lang")} ><i className="fas fa-pause"></i></button>            
-              <button className={`${styles.brbtn} ${layouts.btn} ${layouts.icons}`} onClick={()=>Req("BR_skipf")} ><i className="fas fa-fast-forward"></i></button>
+              <button className={`${styles.brbtn} ${layouts.btn} ${layouts.icons}`} onClick={()=>Req("BR_stop")} ><i className="fas fa-stop"></i></button>
             </div>
           }          
         </div>
