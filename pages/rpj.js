@@ -1,7 +1,7 @@
 import styles from '../styles/rpj.module.css';
 import layouts from '../styles/Layouts/layouts.module.css';
 import Layout from '../layouts/layout';
-import Req from '../modules/request';
+import { Req } from '../modules/Send2Api';
 
 const RPJ=()=> {
   return (

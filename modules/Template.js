@@ -1,7 +1,16 @@
+import layouts from '../styles/Layouts/layouts.module.css';
+import { Req } from '../modules/Send2Api';
 import Link from 'next/link';
-import styles from '../styles/Layouts/layouts.module.css';
 
-const Footer=(props)=> {
+ const Header=(props)=> {
+    return (
+        <div className={layouts.power}>
+            <button className={`${props.powerbtn} ${layouts.btn} ${layouts.icons}`} ><i className="fas fa-power-off" onClick={()=>Req(props.val)}></i></button>
+        </div>
+    )
+  }
+
+  const Footer=(props)=> {
     const Lists=[
         {
             href:"/ac",
@@ -25,18 +34,18 @@ const Footer=(props)=> {
         },
     ]
     return (
-        <footer className={styles.footer} style={{display:props.focus?"none":""}} >
+        <footer className={layouts.footer} style={{display:props.focus?"none":""}} >
             {Lists.map((list,k)=>{
                 if(props.loc==list.href){
                     return (
-                        <button className={styles.disbtn} disabled  key={k} >
+                        <button className={layouts.disbtn} disabled  key={k} >
                             <i className={list.faw} ></i>
                         </button>
                     )
                 }else{
                    return( 
                         <Link href={list.href} key={k} >
-                            <button className={`${styles.icons} ${styles.btn}`} >
+                            <button className={`${layouts.icons} ${layouts.btn}`} >
                                 <i className={list.faw} ></i>
                             </button>
                         </Link> 
@@ -46,4 +55,4 @@ const Footer=(props)=> {
         </footer>
     )
 }
-export default Footer;
+export {Header,Footer};

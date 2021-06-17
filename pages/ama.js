@@ -2,8 +2,7 @@ import styles from '../styles/ama.module.css';
 import Layout from '../layouts/layout';
 import layouts from '../styles/Layouts/layouts.module.css';
 import Arrows from '../modules/Arrows';
-import KB from "../modules/btkb";
-import Req from '../modules/request';
+import { KB,Req } from '../modules/Send2Api';
 import {useState} from 'react';
 
 

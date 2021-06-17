@@ -1,7 +1,7 @@
-import Footer from '../modules/footer';
+import { Footer } from '../modules/Template';
 import layouts from '../styles/Layouts/layouts.module.css';
 import styles from '../styles/ac.module.css';
-import {useState} from 'react';
+import { useState } from 'react';
 import Select from 'react-select';
 
 const AC=()=>{
@@ -21,7 +21,7 @@ const AC=()=>{
                 <h1 className={styles.msg}>Coming soon...</h1>
              </div>
             }          
-            <input className={styles.cersius} type="number" min="18" max="30" placeholder="88"></input>
+            <input className={styles.cersius} type="number" min="18" max="30"  placeholder="88"></input>
             
             <div className={styles.control}>
                 <div className={styles.menu}>

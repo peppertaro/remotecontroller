@@ -1,6 +1,5 @@
 import Head from 'next/head';
-import Header from "../modules/header";
-import Footer from "../modules/footer";
+import { Header,Footer } from '../modules/Template';
         
 const Layout=(props)=>{
     return(
