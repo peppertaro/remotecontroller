@@ -13,39 +13,35 @@
     margin: 1rem auto;
   }
   .chbtn{
-    width: 6rem;
-    height: 6rem;
     border-radius: 50%;
     background-color: rgba(255,255,255,0.9);
     border: solid .1rem #a9a9a9;
     font-size: 4rem;
     margin: .5rem 1.5rem;
-    font-family:Castellar,"Book Antiqua","Adobe Devanagari",Candara,Verdana;
+    font-family: Castellar,"Uncial Antiqua","Book Antiqua","Adobe Devanagari",Candara,Verdana;
     align-items: center;
   }
   .chbtn:hover{
-    border:solid .1rem lightgray;
+    border: solid .1rem lightgray;
   }
   .chbtn:active{
-    border:none;
+    border: none;
   }
-
 
   /*-----Selects-----*/
   .selects{
-    display:inline-block;
+    display: inline-block;
     padding: .5rem 0;
   }
   .selectbtn,.brbtn{
-    width: 6rem;
-    height: 6rem;
-    vertical-align: top;
+    vertical-align: middle;
     font-family: Castellar,"Book Antiqua","Adobe Devanagari",Candara,Verdana;
   }
 
   .open{
     transform:translateY(-1rem);
   }
+
   /*----Arrows-----*/
 
   .arrows{
@@ -64,50 +60,50 @@
   }
 
   .arrowBox{
-    margin-bottom:3.5rem;
+    margin-bottom: 12rem;
   }
 
   .volarr,.charr{
-    display:inline-block;
+    display: inline-block;
     margin: 1rem;
   }
 
   .volup,.voldown,.chup,.chdown{
-    display:block;
-    font-size:4.5rem;
-    color:rgba(0,0,0,0.6);
+    display: block;
+    font-size: 4.5rem;
+    color: rgba(0,0,0,0.6);
   }
   
   .volup:hover,
   .voldown:hover,
   .chup:hover,
   .chdown:hover{
-    color:rgba(0,0,0,0.3);
+    color: rgba(0,0,0,0.3);
   }
 
   .volup:active,
   .voldown:active,
   .chup:active,
   .chdown:active{
-    color:rgba(0,0,0,1);
+    color: rgba(0,0,0,1);
   }
 
 /*------BluRay-----*/
 .brBox{
-  padding-bottom:10rem;
+  padding-bottom: 10rem;
 }
 
 .brpower{
-  width:100%;
+  width: 100%;
 }
 
 .brbtn{  
-  color:#fff;
+  color: #fff;
   background-color: lightskyblue;
 }
 
 .brselect{
-  display:inline-block;
+  display: inline-block;
 }
 
   @media (max-width: 600px) {

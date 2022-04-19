@@ -9,11 +9,13 @@ const Arrows=(props)=>{
     return(
         <div className={layouts.arrows}>
           {ArrowsBtn('up')}
-          {ArrowsBtn('left')}
-          <button className={layouts.enter} >
-            <i className={`fas fa-dot-circle  ${props.arrow} ${layouts.entbtn} `} onClick={props.enter} ></i>
-          </button>
-          {ArrowsBtn('right')}
+          <div className={layouts.center}>
+            {ArrowsBtn('left')}
+            <button className={layouts.enter} >
+              <i className={`fas fa-dot-circle  ${props.arrow} ${layouts.entbtn} `} onClick={props.enter} ></i>
+            </button>
+            {ArrowsBtn('right')}
+          </div>
           {ArrowsBtn('down')}
         </div>
     )}
