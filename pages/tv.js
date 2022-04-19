@@ -6,9 +6,13 @@ import { Req } from '../modules/Send2Api';
 import { useState } from 'react';
 
 const TV=() => {
-  const [ChsState, setChsState]=useState(false); 
-  const [CtrlState, setCtrlState]=useState(false); 
-  const Nums=[...Array(12).keys(12)].map(i=>++i);
+  const [ChsState, setChsState]=useState(false),
+  [CtrlState, setCtrlState]=useState(false),
+  Nums=[...Array(12).keys(12)].map(i=>++i),
+  Btns=(s,o,i)=>(<button className={`${styles[s]} ${layouts.btn} ${layouts.icons}`} onClick={o} >{i}</button>),
+  Fa=(d,s,o)=>(<i className={`fas fa-${d} ${s}`} onClick={o} />),
+  Chs=<>Chs<i className={`fas fa-caret-${ChsState?"up":"down"} ${styles.open}`} /></>,
+  BRs=<>Ctrl<i className={`fas fa-caret-${CtrlState?"up":"down"} ${styles.open}`} /></>;
   return (
     <Layout container={`${layouts.container} ${styles.container}`}
             powerbtn={styles.powerbtn}
@@ -16,10 +20,10 @@ const TV=() => {
             val="TV_toggle"
             loc="/tv" >
       <div className={styles.selects}>
-        <button className={`${styles.selectbtn} ${layouts.btn} ${layouts.icons}`} onClick={()=>Req("TV_select")} >Select</button>
-        <button className={`${styles.selectbtn} ${layouts.btn} ${layouts.icons}`} onClick={()=>Req("TV_chlist")}>Ch-List</button>
-        <button className={`${styles.selectbtn} ${layouts.btn} ${layouts.icons}`} onClick={()=>Req("TV_back")}>Back</button>
-        <button className={`${styles.selectbtn} ${layouts.btn} ${layouts.icons}`} onClick={()=>setChsState(!ChsState)} >Chs<i className={`fas fa-caret-${ChsState?"up":"down"} ${styles.open}`}></i></button>
+        {Btns("selectbtn",()=>Req("TV_select"),"Select")}
+        {Btns("selectbtn",()=>Req("TV_chlist"),"Chlist")}
+        {Btns("selectbtn",()=>Req("TV_back"),"Back")}
+        {Btns("selectbtn",()=>setChsState(!ChsState),Chs)}
       </div>
       <div className={styles.ch} >
         {ChsState && 
@@ -34,33 +38,33 @@ const TV=() => {
               down={()=>Req('TV_down')} 
               arrow={layouts.arrow} />
         <div className={styles.volarr}>
-          <i className={`fas fa-volume-up ${styles.volup}`} onClick={()=>Req("TV_volup")} />
-          <i className={`fas fa-volume-down ${styles.voldown}`} onClick={()=>Req("TV_voldown")} />
+          {Fa("volume-up",styles.volup,()=>Req("TV_volup"))}         
+          {Fa("volume-down",styles.voldown,()=>Req("TV_voldown"))}                   
         </div>
         <div className={styles.charr}>
-          <i className={`fas fa-chevron-circle-up ${styles.chup}`} onClick={()=>Req("TV_chup")} />
-          <i className={`fas fa-chevron-circle-down ${styles.chdown}`} onClick={()=>Req("TV_chdown")} />
+          {Fa("chevron-circle-up",styles.chup,()=>Req("TV_chup"))}        
+          {Fa("chevron-circle-down",styles.chdown,()=>Req("TV_chdown"))}
         </div>
       </div>
       <div className={styles.brBox}>
         <div className={`${layouts.power} ${styles.brpower}`}>
-          <button className={`${styles.brbtn} ${layouts.btn} ${layouts.icons}`}><i className="fas fa-power-off" onClick={()=>Req("BR_toggle")} /></button>
+          {Btns("brbtn",null,Fa("power-off",null,()=>Req("BR_toggle")))}          
         </div>
         <div className={styles.brselect}>
-          <button className={`${styles.brbtn} ${layouts.btn} ${layouts.icons}`} onClick={()=>Req("BR_lang")} >Lang</button>
-          <button className={`${styles.brbtn} ${layouts.btn} ${layouts.icons}`} onClick={()=>Req("BR_list")} >List</button>
-          <button className={`${styles.brbtn} ${layouts.btn} ${layouts.icons}`} onClick={()=>setCtrlState(!CtrlState)} >Ctrl<i className={`fas fa-caret-${CtrlState?"up":"down"} ${styles.open}`}></i></button>
+          {Btns("brbtn",()=>Req("BR_lang"),"Lang")}
+          {Btns("brbtn",()=>Req("BR_list"),"List")}
+          {Btns("brbtn",()=>setCtrlState(!CtrlState),BRs)}
           {CtrlState &&
-            <div className={styles.brplay}>              
-              <button className={`${styles.brbtn} ${layouts.btn} ${layouts.icons}`} onClick={()=>Req("BR_skipb")} > <i className="fas fa-fast-backward"></i> </button>
-              <button className={`${styles.brbtn} ${layouts.btn} ${layouts.icons}`} onClick={()=>Req("BR_lang")} ><i className="fas fa-pause"></i></button>            
-              <button className={`${styles.brbtn} ${layouts.btn} ${layouts.icons}`} onClick={()=>Req("BR_skipf")} ><i className="fas fa-fast-forward"></i></button>
+            <div className={styles.brplay}>
+              {Btns("brbtn",()=>Req("BR_skipb"),Fa("fast-backward"))}
+              {Btns("brbtn",()=>Req("BR_pause"),Fa("pause"))}
+              {Btns("brbtn",()=>Req("BR_skipf"),Fa("fast-forward"))}
               <br/>
-              <button className={`${styles.brbtn} ${layouts.btn} ${layouts.icons}`} onClick={()=>Req("BR_rew")} ><i className="fas fa-backward"></i></button>
-              <button className={`${styles.brbtn} ${layouts.btn} ${layouts.icons}`} onClick={()=>Req("BR_play")} ><i className="fas fa-play"></i></button>
-              <button className={`${styles.brbtn} ${layouts.btn} ${layouts.icons}`} onClick={()=>Req("BR_ff")} ><i className="fas fa-forward"></i></button>
+              {Btns("brbtn",()=>Req("BR_rew"),Fa("backward"))}
+              {Btns("brbtn",()=>Req("BR_play"),Fa("play"))}
+              {Btns("brbtn",()=>Req("BR_ff"),Fa("forward"))}
               <br/>
-              <button className={`${styles.brbtn} ${layouts.btn} ${layouts.icons}`} onClick={()=>Req("BR_stop")} ><i className="fas fa-stop"></i></button>
+              {Btns("brbtn",()=>Req("BR_stop"),Fa("stop"))}
             </div>
           }          
         </div>
